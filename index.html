@@ -1,95 +1,94 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Frågor och svar</title>
-
+  <meta charset="UTF-8">
+  <title>AF1749 TEN B FRÅGOR</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      margin: 0;
-      padding: 40px;
       display: flex;
       justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #f0f0f0;
     }
 
-    .container {
-      max-width: 800px;
-      width: 100%;
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    }
-
-    .text-box {
-      white-space: pre-wrap; /* Bevarar radbrytningar */
-      line-height: 1.6;
-      font-size: 18px;
-      min-height: 150px;
-      margin-bottom: 20px;
-    }
-
-    button {
-      padding: 12px 24px;
-      font-size: 16px;
-      border: none;
-      border-radius: 8px;
-      background: #0077ff;
-      color: white;
+    img {
+      max-width: 80%;
+      max-height: 80%;
       cursor: pointer;
-    }
-
-    button:hover {
-      background: #005fd1;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <div id="textBox" class="text-box"></div>
-    <button onclick="nextText()">Nästa</button>
-  </div>
+<img id="bild" src="1.png" alt="Bild">
 
-  <script>
-    // Här lägger du in frågor och svar i ordning
-    const texts = [
-`FRÅGA 1
+<script>
+  const bilder = [
+    "1.png",
+    "1SVAR.png",
+    "2.png",
+    "2SVAR.png",
+    "3.png",
+    "3SVAR.png",
+    "5.png",
+    "5SVAR.png",
+    "6.png",
+    "6SVAR.png",
+    "7.png",
+    "7SVAR.png",
+    "8.png",
+    "10.png",
+    "10SVAR.png",
+    "11.png",
+    "11SVAR.png",
+    "12.png",
+    "12SVAR.png",
+    "13.png",
+    "13SVAR.png",
+    "14.png",
+    "14SVAR.png",
+    "15.png",
+    "15SVAR.png",
+    "16.png",
+    "17.png",
+    "17SVAR.png",
+    "18.png",
+    "18SVAR.png",
+    "19.png",
+    "19SVAR.png",
+    "20.png",
+    "20SVAR.png",
+    "21.png",
+    "21SVAR.png",
+    "22.png",
+    "22SVAR.png",
+    "23.png",
+    "23SVAR.png",
+    "24.png",
+    "24SVAR.png",
+    "25.png",
+    "25SVAR.png",
+    "26.png",
+    "26SVAR.png",
+    "27.png",
+    "27SVAR.png",
+    "30.png",
+    "30SVAR.png"
+    
+  ];
 
-Detta är en lång fråga.
-Du kan skriva flera rader.
+  let index = 0;
+  const imgElement = document.getElementById("bild");
 
-Till exempel:
-- Punkt 1
-- Punkt 2
-- Punkt 3`,
+  imgElement.addEventListener("click", function () {
+    index = (index + 1) % bilder.length;
+    imgElement.src = bilder[index];
+  });
+</script>
 
-`SVAR 1
-
-Här kommer ett långt svar.
-
-Du kan också ha:
-• Radbrytningar
-• Listor
-• Långa texter`,
-
-`FRÅGA 2
-
-Vad händer om man klickar igen?`,
-
-`SVAR 2
-
-Nästa text visas automatiskt i ordning.`,
-
-`FRÅGA 3
-
-Det går att lägga till hur många frågor och svar som helst.`,
-
-`SVAR 3
-
-Klart!`
-    ];
-
+</body>
+</html>
