@@ -1,47 +1,45 @@
-```html
 <!DOCTYPE html>
 <html lang="sv">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fråga & Svar</title>
+  <title>Frågor och svar</title>
 
   <style>
     body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
       margin: 0;
-      height: 100vh;
+      padding: 40px;
       display: flex;
       justify-content: center;
-      align-items: center;
-      background: #f2f2f2;
-      font-family: Arial, sans-serif;
     }
 
     .container {
+      max-width: 800px;
+      width: 100%;
       background: white;
-      padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      text-align: center;
-      width: 90%;
-      max-width: 500px;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
     }
 
-    #text {
-      font-size: 24px;
-      margin-bottom: 30px;
-      min-height: 80px;
+    .text-box {
+      white-space: pre-wrap; /* Bevarar radbrytningar */
+      line-height: 1.6;
+      font-size: 18px;
+      min-height: 150px;
+      margin-bottom: 20px;
     }
 
     button {
       padding: 12px 24px;
-      font-size: 18px;
+      font-size: 16px;
       border: none;
-      border-radius: 10px;
+      border-radius: 8px;
       background: #0077ff;
       color: white;
       cursor: pointer;
-      transition: 0.2s;
     }
 
     button:hover {
@@ -52,32 +50,46 @@
 <body>
 
   <div class="container">
-    <div id="text">Ekonomistyrningens utgångspunkter är bland annat ”vision, affärsidé och strategi”. Beskriv
-de tre begreppen.</div>
-    <button onclick="nextText()">Klicka</button>
+    <div id="textBox" class="text-box"></div>
+    <button onclick="nextText()">Nästa</button>
   </div>
 
   <script>
+    // Här lägger du in frågor och svar i ordning
     const texts = [
-      "vision: vision är hur företaget vill bli uppfattade. Kan vara det framtida önskade tillståndet. Affärsidé: affärsidé är det övergripande syftet för företaget. Strategi: strategi beskriver hur ett företag ska arbeta för att uppnå sin vision och affärsidé.",
-      "Vilken årstid gillar du mest?",
-      "Sommaren är härlig med sol och bad!",
-      "Vilken är din favoritmat?",
-      "Pizza är en klassiker!",
-      "Tack för att du testade sidan 😊"
+`FRÅGA 1
+
+Detta är en lång fråga.
+Du kan skriva flera rader.
+
+Till exempel:
+- Punkt 1
+- Punkt 2
+- Punkt 3`,
+
+`SVAR 1
+
+Här kommer ett långt svar.
+
+Du kan också ha:
+• Radbrytningar
+• Listor
+• Långa texter`,
+
+`FRÅGA 2
+
+Vad händer om man klickar igen?`,
+
+`SVAR 2
+
+Nästa text visas automatiskt i ordning.`,
+
+`FRÅGA 3
+
+Det går att lägga till hur många frågor och svar som helst.`,
+
+`SVAR 3
+
+Klart!`
     ];
-
-    let index = 0;
-
-    function nextText() {
-      if (index < texts.length) {
-        document.getElementById("text").innerText = texts[index];
-        index++;
-      }
-    }
-  </script>
-
-</body>
-</html>
-```
 
